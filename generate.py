@@ -92,7 +92,7 @@ def generate_images(
 
         else: ## stylegan v2/v3
             label = torch.zeros([1, G.c_dim], device=device)
-            z = torch.from_numpy(np.random.RandomState(seed).randn(1, G.z_dim)).to(device)
+            z = torch.from_numpy(np.random.randn(1, G.z_dim)).to(device)
             if target_z.size==0:
                 target_z= z.cpu()
             else:
